@@ -9,7 +9,7 @@ class Grid extends Component {
 		for (let i = 0; i < numRows; i++) {
 			let newRow = [];
 			for (let j = 0; j < numColumns; j++) {
-				newRow.push(<Square row={i} column={j} />);
+				newRow.push(<Square row={i} column={j} key={i * numColumns + j} />);
 			}
 			grid.push(newRow);
 		}

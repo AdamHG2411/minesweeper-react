@@ -1,0 +1,54 @@
+.Square {
+	height: 1em;
+	width: 1em;
+	background-color: #bbb;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: 0;
+	padding: 0;
+}
+
+.Square-Default {
+	background-image: url(../../images/ms-square.png);
+}
+
+.Square-One {
+	color: blue;
+}
+
+.Square-Two {
+	color: green;
+}
+
+.Square-Three {
+	color: red;
+}
+
+.Square-Four {
+	color: purple;
+}
+
+.Square-Five {
+	color: darkblue;
+}
+
+.Square-Six {
+	color: darkgreen;
+}
+
+.Square-Seven {
+	color: darkred;
+}
+
+.Square-Eight {
+	color: #330033;
+}
+
+.Square-Mine {
+	background-image: url(../../images/bomb.png);
+}
+
+.Square-Flag {
+	background-image: url(../../images/mine-marker.png);
+}
