@@ -14,13 +14,23 @@ class App extends Component {
 	}
 
 	changeGrid(input) {
+		console.log('App: changeGrid');
 		this.setState({
 			numRows: input.numRows,
 			numColumns: input.numColumns
 		});
 	}
 
+	startTimer() {
+		console.log('App: startTimer');
+	}
+
+	stopTimer() {
+		console.log('App: stopTimer');
+	}
+
 	render() {
+		console.log('App: render');
 		return (
 			<div className="App">
 				<h1>Minesweeper</h1>

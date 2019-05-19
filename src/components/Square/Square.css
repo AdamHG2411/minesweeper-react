@@ -9,6 +9,12 @@
 	padding: 0;
 }
 
+.Square-Count {
+	margin: 0;
+	padding: 0;
+	line-height: 1em;
+}
+
 .Square-Default {
 	background-image: url(../../images/ms-square.png);
 }
