@@ -12,6 +12,8 @@ class App extends Component {
 			numColumns: 8
 		};
 		this.changeGrid = this.changeGrid.bind(this);
+		this.startTimer = this.startTimer.bind(this);
+		this.stopTimer = this.stopTimer.bind(this);
 	}
 
 	changeGrid(input) {
@@ -34,9 +36,9 @@ class App extends Component {
 		console.log('App: render');
 		return (
 			<div className="App">
-				<Header />
-				<Dashboard />
-				<Grid {...this.state} />
+				<Header changeGrid={this.changeGrid} />
+				<Dashboard {...this.state} />
+				<Grid {...this.state} startTimer={this.startTimer} />
 			</div>
 		);
 	}

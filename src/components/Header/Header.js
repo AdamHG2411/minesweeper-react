@@ -6,19 +6,66 @@ class Header extends Component {
 		super(props);
 		console.log(this.props);
 		this.state = {
-			custom: false,
+			gridsize: 'small',
 			rows: 8,
 			columns: 8
 		};
+		this.handleChange = this.handleChange.bind(this);
+		this.newGrid = this.newGrid.bind(this);
+	}
+
+	handleChange(evt) {
+		console.log('Header: handleChange');
+		this.setState({
+			[evt.target.name]: evt.target.value
+		});
+	}
+
+	newGrid(evt) {
+		evt.preventDefault();
+		console.log('Header: newGrid');
+		let rows;
+		let columns;
+		switch (this.state.gridsize) {
+			case 'small':
+				console.log('small');
+				rows = 8;
+				columns = 8;
+				break;
+			case 'medium':
+				console.log('medium');
+				rows = 16;
+				columns = 16;
+				break;
+			case 'large':
+				console.log('large');
+				rows = 24;
+				columns = 16;
+				break;
+			case 'custom':
+				console.log('custom');
+				rows = this.state.rows;
+				columns = this.state.columns;
+				break;
+			default:
+				rows = 8;
+				columns = 8;
+		}
+		let size = {
+			numRows: rows,
+			numColumns: columns
+		};
+		console.log(size);
+		this.props.changeGrid(size);
 	}
 
 	render() {
 		let gridRowsColumns;
-		if (this.state.custom) {
+		if (this.state.gridsize === 'custom') {
 			gridRowsColumns = (
 				<div className="Header-RowsColumns">
-					<input type="text" name="rows" placeholder="Rows" />
-					<input type="text" name="columns" placeholder="Columns" />
+					<input type="text" name="rows" placeholder="Rows" onChange={this.handleChange} />
+					<input type="text" name="columns" placeholder="Columns" onChange={this.handleChange} />
 				</div>
 			);
 		} else {
@@ -33,8 +80,8 @@ class Header extends Component {
 		return (
 			<div className="Header">
 				<h1 className="Header-Title">Minesweeper</h1>
-				<form className="Header-GridForm">
-					<select name="grid-size" className="Header-Selector">
+				<form className="Header-GridForm" onSubmit={this.newGrid}>
+					<select name="gridsize" className="Header-Selector" onChange={this.handleChange}>
 						<option defaultValue value="small">
 							Small
 						</option>
@@ -43,7 +90,7 @@ class Header extends Component {
 						<option value="custom">Custom</option>
 					</select>
 					{gridRowsColumns}
-					<button className="Header-GridButton">New Grid</button>
+					<input type="submit" className="Header-GridButton" value="New Grid" />
 				</form>
 			</div>
 		);

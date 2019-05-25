@@ -15,7 +15,7 @@ class Dashboard extends Component {
 				</div>
 				<div className="Dashboard-Flagged">
 					<img src={flagImg} alt="mines flagged" />
-					<h2>0 / 12</h2>
+					<h2>0 / {Math.floor(this.props.numRows * this.props.numColumns * 0.2)}</h2>
 				</div>
 				<div className="Dashboard-Record">
 					<img src={trophyImg} alt="record time" />
