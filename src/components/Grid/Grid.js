@@ -92,7 +92,6 @@ class Grid extends Component {
 				finalValues[i] = mineCount;
 			}
 		}
-		console.log('update trueValues');
 		this.setState({ trueValues: finalValues, seeded: true });
 	}
 
@@ -138,7 +137,6 @@ class Grid extends Component {
 		for (let i = 0; i < this.props.numRows * this.props.numColumns; i++) {
 			displayValues.push(11);
 		}
-		console.log('update displayValues');
 		this.setState({ displayValues });
 	}
 
@@ -150,7 +148,6 @@ class Grid extends Component {
 			this.state.displayValues &&
 			this.state.trueValues[this.state.clicked] !== this.state.displayValues[this.state.clicked]
 		) {
-			console.log('willUpdateDisplay');
 			this.updateDisplay(this.state.clicked);
 		}
 	}

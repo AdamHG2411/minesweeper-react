@@ -1,18 +1,19 @@
 .Square {
-	height: 1em;
-	width: 1em;
+	height: 1.5em;
+	width: 1.5em;
 	background-color: #bbb;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
 	margin: 0;
 	padding: 0;
+	border: .5px solid #888;
 }
 
 .Square-Count {
 	margin: 0;
 	padding: 0;
-	line-height: 1em;
+	line-height: 1.5em;
 }
 
 .Square-Default {

@@ -1,0 +1,65 @@
+.Header {
+	display: flex;
+	justify-content: space-between;
+	align-content: flex-start;
+	padding: .5em;
+	margin: 1em auto;
+}
+
+.Header-GridForm {
+	display: flex;
+	justify-content: space-evenly;
+	align-content: flex-start;
+	flex-wrap: wrap;
+	margin: auto 0;
+}
+
+.Header-GridForm > * {
+	margin: 0 1em;
+}
+
+.Header-Selector {
+	display: block;
+}
+
+.Header-RowsColumns {
+	display: flex;
+	justify-content: space-evenly;
+	align-content: flex-start;
+}
+
+.Header-RowsColumns > * {
+	margin: 0 1em;
+}
+
+.Header-GridButton {
+	padding: 1em;
+	height: 4em;
+	width: 8em;
+	border-radius: 30px;
+	background-color: #228b21;
+	font-weight: 700;
+	color: white;
+}
+
+@media only screen and (max-width: 800px) {
+	.Header {
+		flex-direction: column;
+		align-content: flex-start;
+		width: 80%;
+	}
+
+	.Header-GridForm {
+		flex-direction: column;
+		align-content: center;
+		margin: 20px auto 0 auto;
+	}
+
+	.Header-RowsColumns {
+		margin: 10px auto;
+	}
+
+	.Header-GridButton {
+		margin: 20px auto 0 auto;
+	}
+}
